@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aegis-test-interfaces"
-version = "1.0.0"
+version = "0.0.1"
 description = "Python wrapper for Aegis Test messaging interfaces"
 readme = "README.md"
 requires-python = ">=3.10"

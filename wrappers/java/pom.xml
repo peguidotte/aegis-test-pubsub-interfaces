@@ -7,7 +7,7 @@
 
     <groupId>com.interfaces.aegis.test</groupId>
     <artifactId>aegis-test-interfaces-java</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>Aegis Test Interfaces - Java</name>
