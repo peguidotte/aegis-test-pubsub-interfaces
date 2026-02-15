@@ -293,7 +293,7 @@ class Generator:
         # Generate each topic class
         for topic in self.topics:
             domain = topic.topic.split(".")[1]
-            domain_dir = self.wrappers_java_dir / "src" / "main" / "java" / "com" / "interfaces" / "aegis" / "test" / "topics" / domain
+            domain_dir = self.wrappers_java_dir / "src" / "main" / "java" / "com" / "aegis" / "test" / "interfaces" / "topics" / domain
             domain_dir.mkdir(parents=True, exist_ok=True)
 
             # Generate class name from topic name
@@ -346,9 +346,9 @@ class Generator:
         const_name = "_".join(topic.name.upper().split("-"))
 
         output = []
-        output.append("package com.interfaces.aegis.test.topics.{};".format(domain))
+        output.append("package com.aegis.test.interfaces.topics.{};".format(domain))
         output.append("")
-        output.append("import com.interfaces.aegis.test.messaging.Destination;")
+        output.append("import com.aegis.test.interfaces.messaging.Destination;")
         output.append("import java.util.Map;")
         output.append("import java.util.Objects;")
         output.append("")
@@ -359,7 +359,7 @@ class Generator:
         output.append(" * ")
         output.append(" * <p><strong>Contract:</strong> {{{}}}</p>".format("@code " + topic.event_schema))
         output.append(" * ")
-        output.append(" * @see com.interfaces.aegis.test.messaging.Topics#{}".format(const_name))
+        output.append(" * @see com.aegis.test.interfaces.messaging.Topics#{}".format(const_name))
         output.append(" */")
         output.append("public final class {} implements Destination {{".format(class_name))
         output.append("    ")
@@ -432,16 +432,16 @@ class Generator:
 
     def _generate_java_topics_registry(self) -> None:
         """Generate Topics.java registry class."""
-        topics_file = self.wrappers_java_dir / "src" / "main" / "java" / "com" / "interfaces" / "aegis" / "test" / "messaging" / "Topics.java"
+        topics_file = self.wrappers_java_dir / "src" / "main" / "java" / "com" / "aegis" / "test" / "interfaces" / "messaging" / "Topics.java"
         
         imports = []
         for topic in self.topics:
             domain = topic.topic.split(".")[1]
             class_name = "".join(word.capitalize() for word in topic.name.split("-"))
-            imports.append("import com.interfaces.aegis.test.topics.{}.{};".format(domain, class_name))
+            imports.append("import com.aegis.test.interfaces.topics.{}.{};".format(domain, class_name))
 
         output = []
-        output.append("package com.interfaces.aegis.test.messaging;")
+        output.append("package com.aegis.test.interfaces.messaging;")
         output.append("")
         output.extend(sorted(imports))
         output.append("")
@@ -698,7 +698,7 @@ class Topics:
             print("=" * 60)
             print("\nUpdated files:")
             print("  📝 asyncapi.yaml")
-            print("  🔧 wrappers/java/src/main/java/com/interfaces/aegis/test/...")
+            print("  🔧 wrappers/java/src/main/java/com/aegis/test/interfaces/...")
             print("  🐍 wrappers/python/aegis_interfaces/messaging/...")
             
         except Exception as e:
