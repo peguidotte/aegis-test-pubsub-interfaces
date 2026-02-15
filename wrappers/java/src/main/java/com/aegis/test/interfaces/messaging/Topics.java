@@ -1,7 +1,7 @@
-package com.interfaces.aegis.test.messaging;
+package com.aegis.test.interfaces.messaging;
 
-import com.interfaces.aegis.test.topics.specification.SpecificationCreated;
-import com.interfaces.aegis.test.topics.specification.SpecificationRequested;
+import com.aegis.test.interfaces.topics.specification.SpecificationCreated;
+import com.aegis.test.interfaces.topics.specification.SpecificationRequested;
 
 /**
  * Central registry of all Pub/Sub destinations in Aegis Test.

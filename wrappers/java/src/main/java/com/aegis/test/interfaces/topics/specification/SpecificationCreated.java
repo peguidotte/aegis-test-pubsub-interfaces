@@ -1,33 +1,32 @@
-package com.interfaces.aegis.test.topics.specification;
+package com.aegis.test.interfaces.topics.specification;
 
-import com.interfaces.aegis.test.messaging.Destination;
+import com.aegis.test.interfaces.messaging.Destination;
 import java.util.Map;
 import java.util.Objects;
 
 /**
- * Destination for specification-requested event.
+ * Destination for specification-created event.
  * 
- * <p>Event published when a new test specification is requested.
-Published by the portal when a user submits a new specification request.
-Consumed by the orchestrator to initiate test generation workflow.
-</p>
+ * <p>Event topic published when a test specification has been successfully created.
+ * Emitted by the orchestrator after specification is persisted.
+ * Consumed by analytics and notification services.</p>
  * 
- * <p><strong>Contract:</strong> {@code SpecificationRequestedEventV1}</p>
+ * <p><strong>Contract:</strong> {@code SpecificationCreatedEventV1}</p>
  * 
- * @see com.interfaces.aegis.test.messaging.Topics#SPECIFICATION_REQUESTED
+ * @see com.aegis.test.messaging.Topics#SPECIFICATION_CREATED
  */
-public final class SpecificationRequested implements Destination {
+public final class SpecificationCreated implements Destination {
     
-    private static final String NAME = "specification-requested";
-    private static final String TOPIC = "aegis-test.specification.requested";
-    private static final String SCHEMA = "SpecificationRequestedEventV1";
-    private static final String DEFAULT_CONSUMER = "orchestrator";
+    private static final String NAME = "specification-created";
+    private static final String TOPIC = "aegis-test.specification.created";
+    private static final String SCHEMA = "SpecificationCreatedEventV1";
     
     private static final Map<String, String> SUBSCRIPTIONS = Map.of(
-            "orchestrator", "orchestrator.aegis-test.specification.requested"
+            "analytics", "analytics.aegis-test.specification.created",
+            "notifications", "notifications.aegis-test.specification.created"
         );
     
-    public SpecificationRequested() {
+    public SpecificationCreated() {
         // Public constructor for instantiation
     }
     
@@ -56,7 +55,11 @@ public final class SpecificationRequested implements Destination {
     
     @Override
     public String getSubscription() {
-        return getSubscription(DEFAULT_CONSUMER);
+        throw new UnsupportedOperationException(
+            "Topic " + NAME + " has multiple consumers. " +
+            "Available consumers: " + SUBSCRIPTIONS.keySet() + ". " +
+            "Use getSubscription(consumer) instead."
+        );
     }
     
     @Override
@@ -66,7 +69,7 @@ public final class SpecificationRequested implements Destination {
     
     @Override
     public String toString() {
-        return "SpecificationRequested{" +
+        return "SpecificationCreated{" +
                "name='" + NAME + "'" +
                ", topic='" + TOPIC + "'" +
                ", schema='" + SCHEMA + "'" +
@@ -77,7 +80,7 @@ public final class SpecificationRequested implements Destination {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SpecificationRequested that = (SpecificationRequested) o;
+        SpecificationCreated that = (SpecificationCreated) o;
         return Objects.equals(TOPIC, that.getTopic());
     }
     

@@ -1,4 +1,4 @@
-package com.interfaces.aegis.test.messaging;
+package com.aegis.test.interfaces.messaging;
 
 /**
  * Represents a complete Pub/Sub messaging destination.
