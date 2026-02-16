@@ -2,12 +2,7 @@ name: Publish Packages
 
 on:
   release:
-    types: [published, created]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish (optional, uses tag if not specified)'
-        required: false
+    types: [published]
 
 permissions:
   contents: read
