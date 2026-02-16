@@ -13,7 +13,7 @@ No `pom.xml` do seu projeto:
 ```xml
 <dependency>
     <groupId>com.interfaces.aegis.test</groupId>
-    <artifactId>aegis-test-interfaces-java</artifactId>
+    <artifactId>aegis-test-pubsub-interfaces</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -126,7 +126,7 @@ Para ver todos os eventos e fluxos de forma visual e interativa:
 1. Abra [AsyncAPI Studio](https://studio.asyncapi.com/)
 2. Selecione "Open URL" e cole:
    ```
-   https://raw.githubusercontent.com/peguidotte/interface-aegis-test/main/asyncapi.yaml
+   https://raw.githubusercontent.com/peguidotte/aegis-test-pubsub-interfaces/main/asyncapi.yaml
    ```
 3. Visualize a topologia completa, fluxos e esquemas
 

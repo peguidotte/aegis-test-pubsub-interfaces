@@ -177,7 +177,7 @@ class Generator:
                 "version": "1.0.0",
                 "contact": {
                     "name": "Aegis Test Team",
-                    "url": "https://github.com/peguidotte/interface-aegis-test"
+                    "url": "https://github.com/peguidotte/aegis-test-pubsub-interfaces"
                 },
                 "license": {
                     "name": "MIT"

@@ -78,7 +78,7 @@ git push origin v0.0.1
 
 **Via GitHub UI:**
 
-1. Ir para [Releases](https://github.com/peguidotte/interface-aegis-test/releases)
+1. Ir para [Releases](https://github.com/peguidotte/aegis-test-pubsub-interfaces/releases)
 2. Clicar "Create a new release"
 3. Preencher:
    - **Tag version**: `v0.0.1`
@@ -109,19 +109,19 @@ git push origin v0.0.1
      ```xml
      <repository>
          <id>github</id>
-         <url>https://maven.pkg.github.com/peguidotte/interface-aegis-test</url>
+         <url>https://maven.pkg.github.com/peguidotte/aegis-test-pubsub-interfaces</url>
      </repository>
 
      <dependency>
-         <groupId>com.interfaces.aegis.test</groupId>
-         <artifactId>aegis-test-interfaces-java</artifactId>
+         <groupId>com.aegis.test</groupId>
+         <artifactId>aegis-test-pubsub-interfaces</artifactId>
          <version>0.0.1</version>
      </dependency>
      ```
 
      **Python (pip from Git):**
      ```bash
-     pip install git+https://github.com/peguidotte/interface-aegis-test.git@v0.0.1#subdirectory=wrappers/python
+     pip install git+https://github.com/peguidotte/aegis-test-pubsub-interfaces.git@v0.0.1#subdirectory=wrappers/python
      ```
      ```
    - **Is a pre-release**: ✅ Marcar (pois é v0.0.1)
@@ -149,7 +149,7 @@ Create Release Summary
 ```
 
 Você pode acompanhar em:
-- **Actions tab**: [GitHub Actions](https://github.com/peguidotte/interface-aegis-test/actions)
+- **Actions tab**: [GitHub Actions](https://github.com/peguidotte/aegis-test-pubsub-interfaces/actions)
 - **Publish workflow**: Verifique o logs do workflow_run
 
 ---
@@ -163,18 +163,18 @@ Após a publicação, verifique se tudo funcionou:
 ```bash
 # Listar releases Maven
 curl -s -H "Authorization: token YOUR_GITHUB_TOKEN" \
-  https://maven.pkg.github.com/peguidotte/interface-aegis-test/com/interfaces/aegis/test/aegis-test-interfaces-java/ | \
-  grep -o 'aegis-test-interfaces-java-[0-9.]*\.jar' | sort -u
+  https://maven.pkg.github.com/peguidotte/aegis-test-pubsub-interfaces/com/aegis/test/aegis-test-pubsub-interfaces/ | \
+  grep -o 'aegis-test-pubsub-interfaces-[0-9.]*\.jar' | sort -u
 
 # Ou verificar no GitHub:
-# https://github.com/peguidotte/interface-aegis-test/packages
+# https://github.com/peguidotte/aegis-test-pubsub-interfaces/packages
 ```
 
 #### Python Package
 
 ```bash
 # Verificar no GitHub:
-# https://github.com/peguidotte/interface-aegis-test/packages
+# https://github.com/peguidotte/aegis-test-pubsub-interfaces/packages
 # (Na tab "Packages")
 ```
 
@@ -193,7 +193,7 @@ Em seu `pom.xml`:
     <repository>
         <id>github</id>
         <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/peguidotte/interface-aegis-test</url>
+        <url>https://maven.pkg.github.com/peguidotte/aegis-test-pubsub-interfaces</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -205,8 +205,8 @@ Em seu `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.interfaces.aegis.test</groupId>
-    <artifactId>aegis-test-interfaces-java</artifactId>
+    <groupId>com.aegis.test</groupId>
+    <artifactId>aegis-test-pubsub-interfaces</artifactId>
     <version>0.0.1</version>
 </dependency>
 ```
@@ -230,8 +230,8 @@ Em `~/.m2/settings.xml`:
 #### 4. Use in Code
 
 ```java
-import com.interfaces.aegis.test.messaging.Destination;
-import com.interfaces.aegis.test.messaging.Topics;
+import com.aegis.test.interfaces.messaging.Destination;
+import com.aegis.test.interfaces.messaging.Topics;
 
 public class MyService {
     public void publish() {
@@ -250,7 +250,7 @@ public class MyService {
 #### 1. Install from Git
 
 ```bash
-pip install git+https://github.com/peguidotte/interface-aegis-test.git@v0.0.1#subdirectory=wrappers/python
+pip install git+https://github.com/peguidotte/aegis-test-pubsub-interfaces.git@v0.0.1#subdirectory=wrappers/python
 ```
 
 #### 2. Use in Code
@@ -292,7 +292,7 @@ class MyService:
     <repository>
         <id>github</id>
         <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/peguidotte/interface-aegis-test</url>
+        <url>https://maven.pkg.github.com/peguidotte/aegis-test-pubsub-interfaces</url>
     </repository>
 </distributionManagement>
 ```

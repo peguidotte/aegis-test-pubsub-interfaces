@@ -3,7 +3,7 @@ requires = ["setuptools>=65.0", "wheel", "build"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aegis-test-interfaces"
+name = "aegis-test-pubsub-interfaces"
 version = "0.0.1"
 description = "Python wrapper for Aegis Test messaging interfaces"
 readme = "README.md"

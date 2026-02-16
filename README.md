@@ -256,7 +256,7 @@ Você pode visualizar `asyncapi.yaml` usando ferramentas como:
 
 **Exemplo: Copie a URL do arquivo `asyncapi.yaml` no GitHub e abra em:**
 ```
-https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/peguidotte/interface-aegis-test/main/asyncapi.yaml
+https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/peguidotte/aegis-test-pubsub-interfaces/main/asyncapi.yaml
 ```
 
 ---

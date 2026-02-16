@@ -17,7 +17,7 @@ Add to your `pom.xml`:
 ```xml
 <dependency>
     <groupId>com.interfaces.aegis.test</groupId>
-    <artifactId>aegis-test-interfaces-java</artifactId>
+    <artifactId>aegis-test-pubsub-interfaces</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
